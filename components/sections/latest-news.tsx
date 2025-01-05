@@ -7,33 +7,33 @@ import Link from 'next/link';
 
 const newsItems = [
     {
-        title: "Breaking News Title 1",
-        description: "Major developments in global finance markets...",
+        title: "Global Markets: Institutional Investors Shift Focus",
+        description: "Leading financial institutions are repositioning their portfolios amid changing market dynamics...",
         time: "3 hours ago",
-        image: "https://images.unsplash.com/photo-1671956602116-aa6865609028"
+        image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80"
     },
     {
-        title: "Breaking News Title 2",
-        description: "Technology sector sees unprecedented growth...",
+        title: "Digital Asset Markets: A New Paradigm",
+        description: "Analysis of institutional adoption and regulatory developments in digital assets...",
         time: "4 hours ago",
-        image: "https://images.unsplash.com/photo-1672956602116-aa6865609028"
+        image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?q=80"
     },
     {
-        title: "Breaking News Title 3",
-        description: "Environmental policy changes impact industry...",
+        title: "Market Analysis: Key Trends and Forecasts",
+        description: "In-depth analysis of market trends and expert forecasts for the coming quarter...",
         time: "5 hours ago",
-        image: "https://images.unsplash.com/photo-1673956602116-aa6865609028"
+        image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80"
     }
 ];
 
 export function LatestNews() {
     return (
-        <section className="container py-8 mb-12">
-            <h2 className={`${playfair.className} text-2xl font-bold mb-6`}>Latest News</h2>
-            <div className="grid gap-6 md:grid-cols-3">
+        <section className="container py-16 mb-20">
+            <h2 className={`${playfair.className} text-3xl font-bold mb-10`}>Latest Insights</h2>
+            <div className="grid gap-8 md:grid-cols-3">
                 {newsItems.map((news, i) => (
-                    <Link href={`/news/${i + 1}`} key={i}>
-                        <Card className="overflow-hidden transition-all duration-300 hover:scale-[1.01] hover:shadow-md cursor-pointer">
+                    <Link href={`/news/${i + 1}`} key={i} className="h-full">
+                        <Card className="p-0 border border-zinc-800 bg-background overflow-hidden h-full transition-colors duration-300 hover:border-zinc-400 dark:border-zinc-800 dark:hover:border-zinc-600">
                             <div className="relative aspect-[16/9]">
                                 <Image
                                     src={news.image}
@@ -42,14 +42,15 @@ export function LatestNews() {
                                     className="object-cover"
                                 />
                             </div>
-                            <div className="p-6">
-                                <h3 className={`${playfair.className} text-xl font-bold mb-2 transition-colors duration-300 hover:text-primary/90`}>
+                            <div className="p-8 flex flex-col flex-1">
+                                <h3 className={`${playfair.className} text-xl font-bold mb-3 line-clamp-2`}>
                                     {news.title}
                                 </h3>
-                                <p className="text-muted-foreground text-sm mb-4">
+                                <p className="text-muted-foreground text-sm mb-6 flex-1 line-clamp-3">
                                     {news.description}
                                 </p>
-                                <div className="text-sm text-muted-foreground">
+                                <div className="text-sm text-muted-foreground mt-auto flex items-center">
+                                    <span className="w-1 h-1 bg-primary rounded-full mr-2"></span>
                                     {news.time}
                                 </div>
                             </div>

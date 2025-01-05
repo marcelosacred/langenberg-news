@@ -22,12 +22,15 @@ export function SiteHeader() {
             </div>
             <div className="flex items-center space-x-4">
               <Button variant="ghost" size="sm">Subscribe</Button>
-              <Button variant="default" size="sm">Sign In</Button>
+              <Link href="/sign-in">
+                <Button variant="default" size="sm">Sign In</Button>
+              </Link>
               <ModeToggle />
             </div>
           </nav>
         </div>
       </div>
     </header>
+
   );
 }

@@ -6,6 +6,10 @@ export const inter = Inter({
 });
 
 export const playfair = Playfair_Display({
-  subsets: ['latin', 'cyrillic'],
+  subsets: ['latin'],
   display: 'swap',
+  weight: ['400', '500', '600', '700'],
+  fallback: ['Georgia', 'serif'],
+  preload: true,
+  adjustFontFallback: true
 });
